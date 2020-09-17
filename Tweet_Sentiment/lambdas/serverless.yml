@@ -1,0 +1,39 @@
+
+provider:
+  name: aws
+  stackName: pi-scrape
+  runtime: python3.7
+  timeout: 900
+  environment:
+    GDAL_DATA: /opt/share/gdal
+    PROJ_LIB: /opt/share/proj
+    DJANGO_SETTINGS_MODULE: App.App.settings
+  iamManagedPolicies:
+    - arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess
+    - arn:aws:iam::aws:policy/AmazonSSMFullAccess
+    - arn:aws:iam::aws:policy/AmazonS3FullAccess
+    - arn:aws:iam::aws:policy/AWSLambdaFullAccess
+  region: us-west-2
+
+
+  
+package: 
+  individually: true
+  exclude: 
+    - '*/**'
+  
+plugins:
+- serverless-python-requirements
+
+
+functions:
+  collect:
+    handler: director.handler
+    module: Collect/Director
+    layers:
+      - arn:aws:lambda:us-west-2:183264668013:layer:PI_Layer:19
+  collectdrive:
+    handler: collect.handler
+    module: Collect/Drive
+    layers:
+      - arn:aws:lambda:us-west-2:183264668013:layer:PI_Layer:19
