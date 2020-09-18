@@ -2,7 +2,7 @@
 
 Hello! My name is Kevin, welcome to my portfolio!
 
-![headshot](headshot.jpg?raw=true)
+![headshot](headshot.png?raw=true)
 
 Included in this repo is some small projects I have worked on that showcase some of my skills:
 
