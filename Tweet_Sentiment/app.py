@@ -6,26 +6,31 @@ import altair as alt
 import pydeck as pdk
 from datetime import datetime, timedelta
 from model import BertForSequenceClassification, get_token
+from aws import bucket 
+from io import BytesIO
+
+s3_model = bucket.Object('trained_twitter_model.pth').get()
+
 
 tw = TwitterApp()
 
 @st.cache(show_spinner=False)
-def load_model(name):
-    model = torch.load(name)
+def load_model(streaming_body):
+    model = torch.load(BytesIO(streaming_body), map_location=torch.device('cpu'))
     model.eval()
     model.cpu()
     return model
 
+model = load_model(s3_model['Body'].read())
+
 @st.cache(show_spinner=False)
 def get_prediction(value):
-    model = load_model('trained_model_4_epochs.pth')
     token = get_token(value).unsqueeze(0)
     pred = model(token)
     pred = torch.argmax(pred).item()
     return pred
 
-
-# @st.cache(show_spinner=False)
+@st.cache(show_spinner=False)
 def get_hashtag_data(input, search_type, date_range):
     with st.spinner('gathering tweets...'):
         hashtags = tw.get_hashtag(input, search_type, date_range)
@@ -54,6 +59,7 @@ button = st.button('Get the sentiment of the most {} tweets using {}'.format(sea
 
 if button:
     hashtag_data = get_hashtag_data(hashtag_input, search_type, date_range)
+    hashtag_data
     # hashtag_data = pd.read_excel(r'C:\Users\kevin.mcgee\Desktop\tweets.xlsx')
     hashtag_data_date = hashtag_data.resample('H', on='created_at').sum().reset_index()
     hashtag_data_date

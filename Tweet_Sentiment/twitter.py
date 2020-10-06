@@ -46,14 +46,19 @@ class TwitterApp():
   def get_hashtag(self, hashtag: str, result_type: str, date_range: tuple):
       search_endpoint = 'https://api.twitter.com/1.1/search/tweets.json'
 
-      query = '?q=' + quote_plus(hashtag) + '&' + quote_plus(result_type)
-      query += '&lang=en&count=100'
       final_response = []
       lowest_id = None
       min_date, max_date = date_range
       date = max_date
       before_date = max_date + timedelta(days=1)
+      day_count = 0
       while date >= min_date:
+        query = '?q=' + quote_plus(hashtag) + '&' + quote_plus(result_type)
+        query += '&lang=en&count=100&sample=50'
+        if day_count == 2:
+          lowest_id = None
+          before_date = before_date - timedelta(days=1)
+          day_count = 0
         query += '&until={}'.format(before_date.strftime('%Y-%m-%d'))
         if lowest_id:
             query += '&max_id={}'.format(lowest_id)
@@ -64,6 +69,7 @@ class TwitterApp():
             lowest_id = tweet_data[-1]["id_str"]
             date = datetime.strptime(tweet_data[-1]["created_at"], "%a %b %d %H:%M:%S %z %Y").date()
             final_response += tweet_data
+            day_count += 1
         else:
           break
       return final_response
