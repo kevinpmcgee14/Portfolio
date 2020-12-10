@@ -14,6 +14,8 @@ Included in this repo is some small projects I have worked on that showcase some
 
 * [Tweet Sentiment](https://github.com/kevinpmcgee14/Tweet_Sentiment) is a small application that plots general sentiment about tweets over the past week. In there, you'll find the notebook used for training as well a small application written using [Streamlit](https://www.streamlit.io/). Model is trained with PyTorch.
 
+* [Pytorch Training Utils](https://github.com/kevinpmcgee14/PytorchTrainingUtils) is a package of metrics, callbacks, and trainer wrapper that I use for training models in PyTorch. It allows for easy integration of new training techniques and makes training very user friendly overall.
+
 I regularly add and tinker with these projects, so these will be updated and more projects will be added as time goes on.
 
 Thanks for stopping by!
