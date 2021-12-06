@@ -20,7 +20,7 @@ Included in this repo are links to some small demos and projects I have worked o
 
 * [Pytorch Training Utils](https://github.com/kevinpmcgee14/PytorchTrainingUtils) is a package of metrics, callbacks, and trainer wrapper that I use for training models in PyTorch. It allows for easy integration of new training techniques and makes training very user friendly overall.
 
-* [AirBnB NYC Rentals](https://github.com/kevinpmcgee14/short-term-rental-prices-nyc) is part of the Udacity Machine Learning DevOps Engineer nanodegree program. This project uses [MLFlow](https://mlflow.org/) and [Weights & Biases](https://wandb.ai/site) to automate and track ML experiments in a modular and reproducible fashion.
+* [Airbnb NYC Rentals](https://github.com/kevinpmcgee14/short-term-rental-prices-nyc) is part of the Udacity Machine Learning DevOps Engineer nanodegree program. This project uses [MLFlow](https://mlflow.org/) and [Weights & Biases](https://wandb.ai/site) to automate and track ML experiments in a modular and reproducible fashion.
 
 * [Tweet Sentiment](https://github.com/kevinpmcgee14/Tweet_Sentiment) is a small application that plots general sentiment about tweets over the past week. In there, you'll find the notebook used for training as well a small application written using [Streamlit](https://www.streamlit.io/). Model is trained with PyTorch.
 
