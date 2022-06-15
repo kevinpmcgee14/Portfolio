@@ -2,7 +2,7 @@
 
 Hello! My name is Kevin, welcome to my portfolio!
 
-![headshot](headshot.png?=250x250)
+![headshot](<img src="/kevinpmcgee14/Portfolio/raw/master/headshot.png" width="250" height="250" alt="headshot" style="max-width: 100%;">)
 
 Included in this repo are links to some small demos and projects I have worked on that showcase some of my skills:
 
