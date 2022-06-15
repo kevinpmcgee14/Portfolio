@@ -1,8 +1,8 @@
-# Portfolio
+# Demos & Projects
 
-Hello! My name is Kevin, welcome to my portfolio!
+Hello! My name is Kevin, thanks for stopping by! 
 
-![headshot](<img src="/kevinpmcgee14/Portfolio/raw/master/headshot.png" width="250" height="250" alt="headshot" style="max-width: 100%;">)
+<img src="https://github.com/kevinpmcgee14/Portfolio/blob/master/headshot.png" width="250" height="250" alt="headshot" style="max-width: 100%;">
 
 Included in this repo are links to some small demos and projects I have worked on that showcase some of my skills:
 
@@ -29,5 +29,3 @@ Included in this repo are links to some small demos and projects I have worked o
 * [Tweet Sentiment](https://github.com/kevinpmcgee14/Tweet_Sentiment) is a small application that plots general sentiment about tweets over the past week. In there, you'll find the notebook used for training as well a small application written using [Streamlit](https://www.streamlit.io/). Model is trained with PyTorch.
 
 I regularly add and tinker with these projects, so these will be updated and more projects will be added as time goes on.
-
-Thanks for stopping by!
