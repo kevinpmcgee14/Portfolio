@@ -2,7 +2,7 @@
 
 Hello! My name is Kevin, welcome to my portfolio!
 
-![headshot](headshot.png?raw=true)
+![headshot](headshot.png?=250x250)
 
 Included in this repo are links to some small demos and projects I have worked on that showcase some of my skills:
 
